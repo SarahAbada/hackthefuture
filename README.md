@@ -1,27 +1,55 @@
-# HackTheFuture (bare bones)
+# HackTheFuture – Smart Arrival Predictor 🚀
 
-A tiny, non-functional site to kick off your hackathon.
-It shows a centered logo, a top nav (Home / Log in), and a placeholder login page.
+A prototype web app that uses **AI + real-world data** to predict the probability of arriving on time to an event.  
+It integrates:
 
-## Prereqs
-- Node.js 18+ installed
+- **NLP**: Understands your text input like `"I need to reach my interview by 6:30pm"`  
+- **Risk engine**: Combines historical transit delays, traffic, weather, and route features to estimate arrival probability.  
+- **Fallback logic**: Looks realistic even when historical data is missing.  
+
+---
+
+## Features
+
+- Enter a natural language plan for reaching a destination.  
+- AI parses **target time and urgency**.  
+- System computes an **on-time probability** using historical + live data.  
+- Demo mode included with a **pre-set prompt** for instant showcase.  
+
+---
+
+## Prerequisites
+
+- Node.js 18+  
+- npm  
+- PostgreSQL database (for historical/traffic/weather data)  
+- **OpenAI API key** (for NLP parsing)  
+
+---
 
 ## Setup & Run (localhost)
 
-## Linux
+### 1️⃣ Install dependencies
+
 ```bash
+# Linux
 sudo apt install npm -y
-```
 
-## MAC
-```bash
-sudo brew install npm
-```
+# Mac
+brew install npm
 
-```bash
-cd HackTheFutures
-npm install
-npm start
-```
+### 2️⃣ Configure environment
 
-Then open: http://localhost:3000
+Create a `.env` file in the root directory with your OpenAI API key and database URL:
+
+```env
+CEREBRAS_API_KEY=your_api_key_here
+DATABASE_URL=postgres://user:password@host:port/dbname
+> If you don’t have real data yet, demo mode uses fallback values so it still works.
+
+### 3️⃣ Run the backend
+- Server runs on http://localhost:3000
+- Demo prompt automatically runs and prints:
+- Parsed intent from AI
+- Estimated probability of arriving on time
+
