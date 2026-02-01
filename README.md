@@ -47,9 +47,36 @@ CEREBRAS_API_KEY=your_api_key_here
 DATABASE_URL=postgres://user:password@host:port/dbname
 > If you don’t have real data yet, demo mode uses fallback values so it still works.
 
-### 3️⃣ Run the backend
-- Server runs on http://localhost:3000
-- Demo prompt automatically runs and prints:
-- Parsed intent from AI
-- Estimated probability of arriving on time
+## 3️⃣ Run the backend
+
+```bash
+node src/index.js
+```
+
+* Server runs on http://localhost:3000
+* Demo prompt automatically runs and prints:
+   * Parsed intent from AI
+   * Estimated probability of arriving on time
+
+## API Endpoints
+
+* `GET /api/risk?route_id=ROUTE&stop_id=STOP` → Returns risk score & delay model
+* `POST /api/nlp` → Parse natural language input into structured intent
+
+## Notes for Judges
+
+* Fallback logic ensures realistic outputs even with missing data.
+* Fully demoable without real API keys or database.
+* Focuses on AI-driven planning + risk estimation.
+
+## Quick Demo Tip
+
+To see your AI + risk engine in action instantly:
+
+```bash
+node src/index.js
+```
+
+Check the console output for parsed intent and arrival probability.
+
 
