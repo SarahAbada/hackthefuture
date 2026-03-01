@@ -1,4 +1,4 @@
-# HackTheFuture – Smart Arrival Predictor 🚀
+# HackTheFuture – AI-Driven Transit Planner 🚀
 
 A prototype web app that uses **AI + real-world data** to predict the probability of arriving on time to an event.  
 It integrates:
@@ -78,5 +78,6 @@ node src/index.js
 ```
 
 Check the console output for parsed intent and arrival probability.
+
 
 
